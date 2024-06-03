@@ -15,7 +15,7 @@ env:
 
 jobs:
   windows:
-    name: "${{ matrix.toolset }} std=c++${{ matrix.cxxstd }} ${{ matrix.build-type }}"
+    name: "${{ matrix.toolset }} std=c++${{ matrix.cxxstd }}"
     defaults:
       run:
         shell: cmd
@@ -114,7 +114,7 @@ jobs:
         .\\test\\build\\${{ matrix.build-type }}\\mqtt-test.exe
 
   posix:
-    name: "${{ matrix.toolset }} std=c++${{ matrix.cxxstd }} ${{ matrix.build-type }}"
+    name: "${{ matrix.toolset }} std=c++${{ matrix.cxxstd }} ${{ matrix.container }}"
 
     defaults:
       run:
