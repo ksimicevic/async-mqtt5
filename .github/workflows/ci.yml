@@ -150,6 +150,26 @@ jobs:
             os: ubuntu-latest
             container: ubuntu:22.04
             build-type: 'Release'
+            cxxstd: 17
+            cxxflags: ''
+            ldflags: ''
+          
+          - toolset: g++-13
+            compiler: g++-13
+            install: g++-13
+            os: ubuntu-latest
+            container: ubuntu:22.04
+            build-type: 'Release'
+            cxxstd: 17
+            cxxflags: ''
+            ldflags: ''
+          
+          - toolset: g++-14
+            compiler: g++-14
+            install: g++-14
+            os: ubuntu-latest
+            container: ubuntu:22.04
+            build-type: 'Release'
             cxxstd: 20
             cxxflags: ''
             ldflags: ''
