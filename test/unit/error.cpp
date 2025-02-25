@@ -19,7 +19,7 @@ using namespace boost::mqtt5;
 BOOST_AUTO_TEST_SUITE(error/*, *boost::unit_test::disabled()*/)
 
 struct client_error_codes {
-    const client::client_ec_category& cat = client::get_error_code_category();
+    const client::detail::client_ec_category& cat = client::get_error_code_category();
 
     const std::vector<client::error> ecs = {
         client::error::malformed_packet,

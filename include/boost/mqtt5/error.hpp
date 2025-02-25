@@ -51,8 +51,7 @@ enum class disconnect_rc_e : uint8_t {
     payload_format_invalid = 0x99
 };
 
-}
-
+} // end namespace detail
 
 namespace client {
 /**
@@ -97,6 +96,7 @@ enum class error : int {
     shared_subscription_not_available
 };
 
+namespace detail {
 
 inline std::string client_error_to_string(error err) {
     switch (err) {
@@ -137,9 +137,11 @@ struct client_ec_category : public boost::system::error_category {
     }
 };
 
+} // end namespace detail
+
 /// Returns the error category associated with \ref client::error.
-inline const client_ec_category& get_error_code_category() {
-    static client_ec_category cat;
+inline const detail::client_ec_category& get_error_code_category() {
+    static detail::client_ec_category cat;
     return cat;
 }
 
